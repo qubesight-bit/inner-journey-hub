@@ -3,7 +3,7 @@ import { Mark } from "./Mark";
 
 const links = [
   { label: "Sobre el Ateneo", to: "/que-es" },
-  { label: "Pasos", to: "/pasos" },
+  { label: "Premisas", to: "/pasos" },
   { label: "Tradiciones", to: "/tradiciones" },
   { label: "Principios", to: "/principios" },
   { label: "Reuniones", to: "/reuniones" },

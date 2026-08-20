@@ -40,7 +40,7 @@ function ReunionesPage() {
         </ul>
         <Lead className="mt-12">
           Puedes llegar con una pregunta, una duda, una fe profunda o simplemente curiosidad. No
-          necesitas haber recorrido los Pasos para sentarte y participar.
+          necesitas haber asimilado las Premisas para sentarte y participar.
         </Lead>
         <div className="mt-8">
           <Link

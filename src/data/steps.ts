@@ -7,65 +7,66 @@ export type Step = {
 export const steps: Step[] = [
   {
     number: 1,
-    title: "Reconocer nuestras preguntas",
-    body: "Nombrar con honestidad las preguntas existenciales y espirituales que llevamos dentro, incluso las que hemos evitado durante años.",
+    title: "Tenemos preguntas que merecen ser exploradas.",
+    body: "Las grandes preguntas espirituales, filosóficas y existenciales pueden ser exploradas incluso cuando no poseemos respuestas definitivas.",
   },
   {
     number: 2,
-    title: "Aceptar la incertidumbre",
-    body: "Admitir que no lo sabemos todo no debilita la búsqueda: la hace posible. La incertidumbre deja de ser una amenaza y pasa a ser un punto de partida.",
+    title: "La incertidumbre puede formar parte de una espiritualidad madura.",
+    body: 'Decir honestamente "no sé" no representa un fracaso espiritual.',
   },
   {
     number: 3,
-    title: "Examinar nuestra espiritualidad actual",
-    body: "Mirar con calma qué creemos hoy, qué practicamos y qué de eso hemos elegido conscientemente.",
+    title: "Nuestras creencias también deben poder ser examinadas.",
+    body: "Tener convicciones profundas no significa protegerlas de todo cuestionamiento.",
   },
   {
     number: 4,
-    title: "Comprender nuestras raíces",
-    body: "Reconocer la familia, la cultura, la historia y las experiencias que han dado forma a nuestra manera de creer o de no creer.",
+    title: "Comprender de dónde vienen nuestras creencias nos ayuda a comprenderlas mejor.",
+    body: "Familia, cultura, religión, experiencias, razonamiento y comunidad pueden influir en aquello que creemos.",
   },
   {
     number: 5,
-    title: "Encontrarnos con otras perspectivas",
-    body: "Escuchar de primera mano a personas que creen distinto, sin intermediarios ni caricaturas.",
+    title: "Otras perspectivas pueden ampliar nuestra propia comprensión.",
+    body: "Encontrarnos con religiones, filosofías y cosmovisiones diferentes puede ayudarnos a examinar nuestra propia espiritualidad.",
   },
   {
     number: 6,
-    title: "Comprender antes de juzgar",
-    body: "Aprender a describir una creencia ajena de modo que quien la sostiene la reconozca como propia.",
+    title: "Buscamos comprender antes de juzgar.",
+    body: "Intentamos representar justamente las creencias ajenas y preguntar antes de asumir qué piensa otra persona.",
   },
   {
     number: 7,
-    title: "Someter nuestras propias creencias al examen",
-    body: "Aplicar a lo que creemos el mismo rigor que aplicamos a lo que no creemos.",
+    title: "Ninguna convicción personal queda automáticamente fuera del cuestionamiento.",
+    body: "Podemos examinar respetuosamente ideas religiosas, espirituales, filosóficas, ateas o agnósticas sin atacar la dignidad de quienes las sostienen.",
   },
   {
     number: 8,
-    title: "Distinguir experiencia, interpretación y conocimiento",
-    body: "Separar lo que vivimos, lo que interpretamos de ello y lo que podemos sostener como conocimiento compartible.",
+    title: "Experiencia, interpretación, creencia y conocimiento no son necesariamente lo mismo.",
+    body: "Una experiencia puede ser profundamente significativa sin que nuestra interpretación de ella se convierta automáticamente en una verdad universal.",
   },
   {
     number: 9,
-    title: "Profundizar nuestra comprensión del Poder Superior y la espiritualidad",
-    body: "Explorar qué significa —o no significa— un Poder Superior para cada quien, sin que la comunidad determine el resultado.",
+    title:
+      "Cada persona puede desarrollar su propia comprensión de la espiritualidad y del Poder Superior.",
+    body: "El Ateneo acompaña la exploración, pero no determina cuál debe ser su resultado.",
   },
   {
     number: 10,
-    title: "Aprender a convivir con la diferencia",
-    body: "Sostener vínculos reales con personas cuyas convicciones no compartimos, sin renunciar a las propias.",
+    title: "Podemos convivir profundamente sin compartir las mismas conclusiones.",
+    body: "Comprender no significa adoptar. Respetar no significa estar de acuerdo. Cuestionar no significa despreciar.",
   },
   {
     number: 11,
-    title: "Integrar nuestra espiritualidad en la vida",
-    body: "Que lo explorado tenga consecuencias concretas en cómo tratamos a los demás y cómo habitamos lo cotidiano.",
+    title: "Nuestra espiritualidad también se expresa en cómo tratamos a quien piensa diferente.",
+    body: 'No preguntamos solamente "¿qué creo?", sino también "¿qué clase de persona estoy siendo cuando alguien cree algo diferente?".',
   },
   {
     number: 12,
-    title: "Continuar buscando y acompañar sin imponer",
-    body: "Acompañar la búsqueda ajena sin convertirla en la nuestra, y seguir buscando sin dar por cerrada la propia.",
+    title: "Toda comprensión puede continuar creciendo.",
+    body: "Una espiritualidad madura puede tener raíces profundas sin convertirse en una espiritualidad hermética.",
   },
 ];
 
 export const stepsClosing =
-  "El último Paso no significa haber terminado la búsqueda. Significa haber aprendido a continuarla y a acompañar la búsqueda ajena.";
+  "Las Premisas no son etapas que debamos completar ni respuestas que debamos aceptar. Son puntos de partida para continuar explorando, cuestionando, dialogando y aprendiendo unos de otros.";

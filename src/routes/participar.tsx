@@ -36,7 +36,7 @@ function ParticiparPage() {
             <ul className="mt-8 space-y-4 text-muted-foreground">
               <li className="flex gap-3">
                 <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden />
-                No hay requisito de haber recorrido los Pasos.
+                No hay requisito de haber asimilado las Premisas.
               </li>
               <li className="flex gap-3">
                 <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden />

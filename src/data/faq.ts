@@ -47,13 +47,13 @@ export const faq: FaqItem[] = [
       "No poseen autoridad espiritual permanente. Los cargos y responsabilidades son servicios limitados, temporales y rotativos.",
   },
   {
-    question: "¿Cuál es el objetivo de los Doce Pasos?",
+    question: "¿Cuál es el objetivo de las Doce Premisas?",
     answer:
-      "Ayudar a desarrollar una espiritualidad examinada y aprender a encontrarse con perspectivas diferentes. No conducen a una conclusión predeterminada.",
+      "Orientar permanentemente la exploración espiritual, filosófica e interreligiosa. Son ideas fundamentales que pueden practicarse simultáneamente; no hay una progresión obligatoria entre ellas ni una conclusión predeterminada.",
   },
   {
-    question: "¿Tengo que completar los Pasos para participar?",
+    question: "¿Tengo que completar las Premisas para participar?",
     answer:
-      "No. Los Pasos son una guía disponible, no un requisito para hablar, pertenecer o ser escuchado. Puedes usarlos, ignorarlos o volver a ellos cuando quieras.",
+      "No. Las Premisas no son etapas que deban completarse. Son puntos de partida disponibles para explorar, no un requisito para hablar, pertenecer o ser escuchado.",
   },
 ];

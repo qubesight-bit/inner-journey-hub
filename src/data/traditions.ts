@@ -68,4 +68,4 @@ export const traditions: Tradition[] = [
 ];
 
 export const traditionsIntro =
-  "Los Pasos protegen y orientan la búsqueda personal. Las Tradiciones protegen el espacio donde esa búsqueda puede ocurrir.";
+  "Las Premisas orientan permanentemente la exploración personal. Las Tradiciones protegen el espacio donde esa búsqueda puede ocurrir.";

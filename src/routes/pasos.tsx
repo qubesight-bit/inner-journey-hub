@@ -8,11 +8,11 @@ export const Route = createFileRoute("/pasos")({
   component: PasosPage,
   head: () => ({
     meta: [
-      { title: "Los Doce Pasos — Ateneo de la Vida Interior" },
+      { title: "Las 12 Premisas del Ateneo — Ateneo de la Vida Interior" },
       {
         name: "description",
         content:
-          "Doce Pasos de Exploración y Encuentro: una guía para espiritualidad examinada y diálogo, no un sistema coercitivo.",
+          "Las 12 Premisas del Ateneo: ideas fundamentales que orientan la exploración espiritual, filosófica e interreligiosa, sin progresión obligatoria.",
       },
     ],
   }),
@@ -22,9 +22,9 @@ function PasosPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Doce Pasos"
-        title="Los Doce Pasos de Exploración y Encuentro"
-        lead="Ayudan a desarrollar una espiritualidad examinada y a encontrarse con perspectivas diferentes. No conducen a una conclusión predeterminada ni son requisito para participar."
+        eyebrow="Doce Premisas"
+        title="Las 12 Premisas del Ateneo"
+        lead="Ideas fundamentales que orientan permanentemente la exploración espiritual, filosófica e interreligiosa. Pueden practicarse simultáneamente y no existe una progresión obligatoria entre ellas."
       />
 
       <Section className="!pt-0">
@@ -43,7 +43,7 @@ function PasosPage() {
         </div>
         <Quote className="mt-14">{stepsClosing}</Quote>
         <p className="mt-8 max-w-2xl text-muted-foreground">
-          Los Pasos protegen y orientan la búsqueda personal.{" "}
+          Las Premisas orientan permanentemente la exploración personal.{" "}
           <Link to="/tradiciones" className="text-accent underline-offset-4 hover:underline">
             Las Tradiciones
           </Link>{" "}

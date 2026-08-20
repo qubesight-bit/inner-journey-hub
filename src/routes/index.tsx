@@ -320,11 +320,12 @@ function Dialogue() {
 function StepsPreview() {
   return (
     <Section labelledBy="pasos-title">
-      <Eyebrow>Doce Pasos</Eyebrow>
-      <SectionTitle id="pasos-title">Los Doce Pasos de Exploración y Encuentro</SectionTitle>
+      <Eyebrow>Doce Premisas</Eyebrow>
+      <SectionTitle id="pasos-title">Las 12 Premisas del Ateneo</SectionTitle>
       <Lead>
-        Una guía para desarrollar una espiritualidad examinada y aprender a encontrarse con
-        perspectivas diferentes — no un sistema coercitivo ni un requisito de pertenencia.
+        Ideas fundamentales que orientan permanentemente la exploración espiritual, filosófica e
+        interreligiosa. Pueden practicarse simultáneamente y no existe una progresión obligatoria
+        entre ellas.
       </Lead>
       <div className="mt-12 grid gap-3 md:grid-cols-2">
         {steps.map((step) => (
@@ -342,7 +343,7 @@ function StepsPreview() {
       <Quote className="mt-12">{stepsClosing}</Quote>
       <div className="mt-8">
         <Link to="/pasos" className="text-sm font-medium text-accent underline-offset-4 hover:underline">
-          Ver los Pasos en detalle
+          Ver las Premisas en detalle
         </Link>
       </div>
     </Section>

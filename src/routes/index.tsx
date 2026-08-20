@@ -1,9 +1,11 @@
 import { Link } from "@tanstack/react-router";
 import { createFileRoute } from "@tanstack/react-router";
-import { HeroVisual } from "@/components/site/HeroVisual";
+import { HeroLogo3D } from "@/components/site/HeroLogo3DLazy";
 import { CtaBlock } from "@/components/site/CtaBlock";
 import { ExpandableCard } from "@/components/site/Expandable";
 import { DialogueFlow } from "@/components/site/DialogueFlow";
+import { Reveal } from "@/components/site/Reveal";
+import { TiltCard } from "@/components/site/TiltCard";
 import { Eyebrow, Lead, Quote, Section, SectionTitle } from "@/components/site/Primitives";
 import { steps, stepsClosing } from "@/data/steps";
 import { traditions, traditionsIntro } from "@/data/traditions";
@@ -60,19 +62,25 @@ function Hero() {
   return (
     <section
       aria-labelledby="hero-title"
-      className="relative overflow-hidden border-b border-border"
+      className="relative min-h-[min(92vh,860px)] overflow-hidden border-b border-border"
     >
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
         style={{
           backgroundImage:
-            "radial-gradient(ellipse 90% 70% at 75% 35%, color-mix(in oklab, var(--cream) 90%, transparent), transparent), linear-gradient(165deg, color-mix(in oklab, var(--muted) 65%, transparent), transparent 72%)",
+            "radial-gradient(ellipse 90% 70% at 78% 38%, color-mix(in oklab, var(--cream) 92%, transparent), transparent), linear-gradient(165deg, color-mix(in oklab, var(--muted) 70%, transparent), transparent 72%)",
         }}
       />
-      <HeroVisual className="pointer-events-none absolute inset-y-0 right-[-8%] hidden w-[58%] max-w-3xl text-primary/55 lg:block" />
-      <div className="relative mx-auto max-w-6xl px-5 pt-14 pb-16 sm:px-8 sm:pt-20 sm:pb-24">
-        <div className="animate-fade-up max-w-2xl">
+      <div
+        aria-hidden="true"
+        className="hero-depth-grid pointer-events-none absolute inset-0 opacity-[0.35]"
+      />
+
+      <HeroLogo3D className="pointer-events-auto absolute top-[8%] right-[-4%] hidden h-[min(78vh,640px)] w-[58%] max-w-3xl lg:block" />
+
+      <div className="relative mx-auto grid max-w-6xl items-center gap-8 px-5 pt-14 pb-16 sm:px-8 sm:pt-20 sm:pb-24 lg:min-h-[min(92vh,860px)]">
+        <div className="animate-fade-up max-w-2xl lg:max-w-xl">
           <p className="font-display text-xl text-accent sm:text-2xl">Ateneo de la Vida Interior</p>
           <p className="mt-2 max-w-md text-sm leading-relaxed text-muted-foreground">
             Comunidad de exploración espiritual, diálogo interreligioso y ayuda mutua.
@@ -94,13 +102,13 @@ function Hero() {
           <div className="mt-9 flex flex-wrap gap-3">
             <Link
               to="/que-es"
-              className="inline-flex min-h-11 items-center rounded-full bg-primary px-6 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+              className="btn-lift inline-flex min-h-11 items-center rounded-full bg-primary px-6 text-sm font-medium text-primary-foreground transition-all hover:opacity-90"
             >
               Conoce el Ateneo
             </Link>
             <Link
               to="/reuniones"
-              className="inline-flex min-h-11 items-center rounded-full border border-border bg-card/80 px-6 text-sm font-medium text-foreground backdrop-blur-sm transition-colors hover:bg-secondary"
+              className="btn-lift inline-flex min-h-11 items-center rounded-full border border-border bg-card/80 px-6 text-sm font-medium text-foreground backdrop-blur-sm transition-all hover:bg-secondary"
             >
               Cómo son las reuniones
             </Link>
@@ -109,7 +117,8 @@ function Hero() {
             No venimos a recibir una espiritualidad prefabricada. Venimos a explorar la nuestra.
           </p>
         </div>
-        <HeroVisual className="mx-auto mt-10 max-h-56 w-full max-w-md text-primary/70 lg:hidden" />
+
+        <HeroLogo3D className="mx-auto h-64 w-full max-w-md lg:hidden" />
       </div>
     </section>
   );
@@ -118,63 +127,74 @@ function Hero() {
 function WhatIs() {
   return (
     <Section id="que-es" labelledBy="que-es-title" tone="cream">
-      <Eyebrow>Qué es el Ateneo</Eyebrow>
-      <SectionTitle id="que-es-title">Exploración interior y encuentro con el otro</SectionTitle>
-      <Lead>
-        No somos una religión ni promovemos una doctrina espiritual específica. Somos una
-        comunidad plural de ayuda mutua donde personas religiosas, espirituales, agnósticas, ateas
-        y filosóficamente diversas exploran juntas.
-      </Lead>
+      <Reveal>
+        <Eyebrow>Qué es el Ateneo</Eyebrow>
+        <SectionTitle id="que-es-title">Exploración interior y encuentro con el otro</SectionTitle>
+        <Lead>
+          No somos una religión ni promovemos una doctrina espiritual específica. Somos una
+          comunidad plural de ayuda mutua donde personas religiosas, espirituales, agnósticas, ateas
+          y filosóficamente diversas exploran juntas.
+        </Lead>
+      </Reveal>
 
       <div className="mt-14 grid gap-6 lg:grid-cols-2">
-        <article className="rounded-2xl border border-border/80 bg-background/80 p-7 sm:p-9">
-          <h3 className="font-display text-2xl">Hacia dentro</h3>
-          <p className="mt-2 text-sm text-muted-foreground">Comprender:</p>
-          <ul className="mt-5 space-y-3 text-[0.95rem] leading-relaxed text-foreground/90">
-            {[
-              "qué creo",
-              "por qué lo creo",
-              "qué dudas tengo",
-              "qué experiencias han formado mi espiritualidad",
-              "cómo comprendo un Poder Superior",
-              "qué preguntas siguen abiertas",
-            ].map((item) => (
-              <li key={item} className="flex gap-3">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </article>
-        <article className="rounded-2xl border border-border/80 bg-background/80 p-7 sm:p-9">
-          <h3 className="font-display text-2xl">Hacia el encuentro</h3>
-          <p className="mt-2 text-sm text-muted-foreground">Aprender a:</p>
-          <ul className="mt-5 space-y-3 text-[0.95rem] leading-relaxed text-foreground/90">
-            {[
-              "escuchar otras religiones",
-              "comprender antes de juzgar",
-              "representar justamente las creencias ajenas",
-              "expresar desacuerdos respetuosamente",
-              "recibir cuestionamientos",
-              "convivir con diferencias profundas",
-            ].map((item) => (
-              <li key={item} className="flex gap-3">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </article>
+        <Reveal delay={80}>
+          <TiltCard className="h-full rounded-2xl border border-border/80 bg-background/80 p-7 sm:p-9">
+            <h3 className="font-display text-2xl">Hacia dentro</h3>
+            <p className="mt-2 text-sm text-muted-foreground">Comprender:</p>
+            <ul className="mt-5 space-y-3 text-[0.95rem] leading-relaxed text-foreground/90">
+              {[
+                "qué creo",
+                "por qué lo creo",
+                "qué dudas tengo",
+                "qué experiencias han formado mi espiritualidad",
+                "cómo comprendo un Poder Superior",
+                "qué preguntas siguen abiertas",
+              ].map((item) => (
+                <li key={item} className="flex gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </TiltCard>
+        </Reveal>
+        <Reveal delay={160}>
+          <TiltCard className="h-full rounded-2xl border border-border/80 bg-background/80 p-7 sm:p-9">
+            <h3 className="font-display text-2xl">Hacia el encuentro</h3>
+            <p className="mt-2 text-sm text-muted-foreground">Aprender a:</p>
+            <ul className="mt-5 space-y-3 text-[0.95rem] leading-relaxed text-foreground/90">
+              {[
+                "escuchar otras religiones",
+                "comprender antes de juzgar",
+                "representar justamente las creencias ajenas",
+                "expresar desacuerdos respetuosamente",
+                "recibir cuestionamientos",
+                "convivir con diferencias profundas",
+              ].map((item) => (
+                <li key={item} className="flex gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </TiltCard>
+        </Reveal>
       </div>
 
-      <p className="mt-10 text-center font-display text-xl text-foreground sm:text-2xl">
-        Exploración interior + encuentro con el otro
-      </p>
-      <div className="mt-8 flex justify-center">
-        <Link to="/que-es" className="text-sm font-medium text-accent underline-offset-4 hover:underline">
-          Leer más sobre el Ateneo
-        </Link>
-      </div>
+      <Reveal delay={200}>
+        <p className="mt-10 text-center font-display text-xl text-foreground sm:text-2xl">
+          Exploración interior + encuentro con el otro
+        </p>
+        <div className="mt-8 flex justify-center">
+          <Link
+            to="/que-es"
+            className="text-sm font-medium text-accent underline-offset-4 hover:underline"
+          >
+            Leer más sobre el Ateneo
+          </Link>
+        </div>
+      </Reveal>
     </Section>
   );
 }
@@ -182,18 +202,26 @@ function WhatIs() {
 function BigQuestions() {
   return (
     <Section labelledBy="preguntas-title">
-      <Eyebrow>Grandes preguntas</Eyebrow>
-      <SectionTitle id="preguntas-title">Un espacio para las preguntas que importan</SectionTitle>
-      <Lead>No necesitas tener una respuesta para participar.</Lead>
+      <Reveal>
+        <Eyebrow>Grandes preguntas</Eyebrow>
+        <SectionTitle id="preguntas-title">Un espacio para las preguntas que importan</SectionTitle>
+        <Lead>No necesitas tener una respuesta para participar.</Lead>
+      </Reveal>
       <ul className="mt-12 grid gap-3 sm:grid-cols-2">
-        {bigQuestions.map((q) => (
+        {bigQuestions.map((q, i) => (
           <li key={q}>
-            <button
-              type="button"
-              className="group flex min-h-16 w-full items-center rounded-xl border border-border bg-card px-5 py-4 text-left font-display text-base leading-snug transition-all hover:border-accent/45 hover:shadow-soft focus-visible:border-accent sm:text-lg"
-            >
-              <span className="text-foreground transition-colors group-hover:text-primary">{q}</span>
-            </button>
+            <Reveal delay={Math.min(i * 40, 280)} depth={false}>
+              <TiltCard maxTilt={4}>
+                <button
+                  type="button"
+                  className="group flex min-h-16 w-full items-center rounded-xl border border-border bg-card px-5 py-4 text-left font-display text-base leading-snug transition-all hover:border-accent/45 hover:shadow-soft focus-visible:border-accent sm:text-lg"
+                >
+                  <span className="text-foreground transition-colors group-hover:text-primary">
+                    {q}
+                  </span>
+                </button>
+              </TiltCard>
+            </Reveal>
           </li>
         ))}
       </ul>
@@ -231,22 +259,24 @@ function HigherPower() {
 function Dialogue() {
   return (
     <Section tone="ink" labelledBy="dialogo-title" className="!py-24 sm:!py-28">
-      <Eyebrow className="text-ink-foreground/55">Diálogo interreligioso e interconviccional</Eyebrow>
-      <SectionTitle id="dialogo-title" className="text-ink-foreground">
-        Diferentes respuestas. Una conversación.
-      </SectionTitle>
-      <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-foreground/75">
-        Pueden participar personas judías, cristianas, musulmanas, budistas, hinduistas,
-        pertenecientes a otras tradiciones, espirituales sin religión, agnósticas, ateas o
-        filosóficamente indecisas. No presentamos estas categorías como equivalentes
-        doctrinalmente: mostramos la pluralidad de quienes llegan.
-      </p>
+      <Reveal>
+        <Eyebrow className="text-ink-foreground/55">Diálogo interreligioso e interconviccional</Eyebrow>
+        <SectionTitle id="dialogo-title" className="text-ink-foreground">
+          Diferentes respuestas. Una conversación.
+        </SectionTitle>
+        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-foreground/75">
+          Pueden participar personas judías, cristianas, musulmanas, budistas, hinduistas,
+          pertenecientes a otras tradiciones, espirituales sin religión, agnósticas, ateas o
+          filosóficamente indecisas. No presentamos estas categorías como equivalentes
+          doctrinalmente: mostramos la pluralidad de quienes llegan.
+        </p>
+      </Reveal>
 
       <ul className="mt-10 flex flex-wrap gap-2">
         {participants.map((p) => (
           <li
             key={p}
-            className="rounded-full border border-ink-foreground/20 px-4 py-1.5 text-sm text-ink-foreground/85"
+            className="rounded-full border border-ink-foreground/20 px-4 py-1.5 text-sm text-ink-foreground/85 transition-transform hover:-translate-y-0.5"
           >
             {p}
           </li>
@@ -254,30 +284,34 @@ function Dialogue() {
       </ul>
 
       <div className="mt-14 grid gap-12 lg:grid-cols-[1fr_0.9fr] lg:items-start">
-        <div className="space-y-6">
-          {[
-            "Comprender no significa adoptar.",
-            "Respetar no significa estar de acuerdo.",
-            "Cuestionar no significa despreciar.",
-          ].map((line) => (
-            <p key={line} className="font-display text-2xl text-ink-foreground sm:text-[1.65rem]">
-              {line}
+        <Reveal delay={100}>
+          <div className="space-y-6">
+            {[
+              "Comprender no significa adoptar.",
+              "Respetar no significa estar de acuerdo.",
+              "Cuestionar no significa despreciar.",
+            ].map((line) => (
+              <p key={line} className="font-display text-2xl text-ink-foreground sm:text-[1.65rem]">
+                {line}
+              </p>
+            ))}
+            <p className="pt-2 text-ink-foreground/70">
+              El Ateneo no busca eliminar nuestras diferencias. Busca enseñarnos a encontrarnos a
+              través de ellas.
             </p>
-          ))}
-          <p className="pt-2 text-ink-foreground/70">
-            El Ateneo no busca eliminar nuestras diferencias. Busca enseñarnos a encontrarnos a
-            través de ellas.
-          </p>
-          <Link
-            to="/dialogo"
-            className="inline-flex text-sm font-medium text-ink-foreground underline-offset-4 hover:underline"
-          >
-            Profundizar en el diálogo
-          </Link>
-        </div>
-        <div className="rounded-2xl border border-ink-foreground/15 bg-ink-foreground/5 p-6 sm:p-8">
-          <DialogueFlow />
-        </div>
+            <Link
+              to="/dialogo"
+              className="inline-flex text-sm font-medium text-ink-foreground underline-offset-4 hover:underline"
+            >
+              Profundizar en el diálogo
+            </Link>
+          </div>
+        </Reveal>
+        <Reveal delay={180}>
+          <TiltCard className="rounded-2xl border border-ink-foreground/15 bg-ink-foreground/5 p-6 sm:p-8">
+            <DialogueFlow />
+          </TiltCard>
+        </Reveal>
       </div>
     </Section>
   );
@@ -387,20 +421,23 @@ function PrinciplesPreview() {
 function MeetingsPreview() {
   return (
     <Section tone="muted" labelledBy="reuniones-title">
-      <Eyebrow>Reuniones</Eyebrow>
-      <SectionTitle id="reuniones-title">Cómo son las reuniones</SectionTitle>
-      <Lead>
-        Distintos formatos, un mismo propósito: explorar con profundidad y encontrarnos sin
-        imponer.
-      </Lead>
+      <Reveal>
+        <Eyebrow>Reuniones</Eyebrow>
+        <SectionTitle id="reuniones-title">Cómo son las reuniones</SectionTitle>
+        <Lead>
+          Distintos formatos, un mismo propósito: explorar con profundidad y encontrarnos sin
+          imponer.
+        </Lead>
+      </Reveal>
       <ul className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {meetings.map((m) => (
-          <li
-            key={m.title}
-            className="flex h-full flex-col rounded-2xl border border-border bg-background p-6"
-          >
-            <h3 className="font-display text-xl">{m.title}</h3>
-            <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{m.body}</p>
+        {meetings.map((m, i) => (
+          <li key={m.title}>
+            <Reveal delay={i * 50}>
+              <TiltCard className="flex h-full flex-col rounded-2xl border border-border bg-background p-6">
+                <h3 className="font-display text-xl">{m.title}</h3>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{m.body}</p>
+              </TiltCard>
+            </Reveal>
           </li>
         ))}
       </ul>

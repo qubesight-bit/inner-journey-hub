@@ -21,7 +21,7 @@ export function ExpandableCard({
   return (
     <div
       className={cn(
-        "group rounded-xl border border-border bg-card transition-colors hover:border-accent/40",
+        "group tilt-card rounded-xl border border-border bg-card transition-all duration-300 hover:border-accent/40 hover:shadow-soft",
         open && "border-accent/50 shadow-soft",
         className,
       )}
@@ -46,7 +46,11 @@ export function ExpandableCard({
           </span>
         </button>
       </h3>
-      <div id={panelId} hidden={!open} className="px-5 pb-5">
+      <div
+        id={panelId}
+        hidden={!open}
+        className="expand-panel px-5 pb-5"
+      >
         <p className="text-sm leading-relaxed text-muted-foreground">{item.body}</p>
       </div>
     </div>

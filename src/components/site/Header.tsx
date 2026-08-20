@@ -32,7 +32,7 @@ export function Header() {
           : "border-transparent bg-background",
       )}
     >
-      <div className="mx-auto flex h-18 max-w-6xl items-center gap-4 px-5 py-4 sm:px-8">
+      <div className="mx-auto flex min-h-[4.5rem] max-w-6xl items-center gap-4 px-5 py-4 sm:px-8">
         <Link
           to="/"
           className="flex items-center gap-3 rounded-sm text-foreground"
@@ -84,7 +84,7 @@ export function Header() {
       {open && (
         <div
           id="menu-movil"
-          className="fixed inset-x-0 top-18 bottom-0 z-40 overflow-y-auto border-t border-border bg-background px-5 pb-10 xl:hidden"
+          className="fixed inset-x-0 top-[4.5rem] bottom-0 z-40 overflow-y-auto border-t border-border bg-background px-5 pb-10 xl:hidden"
         >
           <nav aria-label="Principal móvil">
             <ul className="divide-y divide-border">

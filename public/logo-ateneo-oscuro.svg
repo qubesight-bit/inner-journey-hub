@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Ateneo de la Vida Interior">
+  <title>Ateneo de la Vida Interior</title>
+  <rect width="512" height="512" fill="#1e2a44"/>
+  <g fill="none" transform="translate(256 248)">
+    <circle cx="-52" cy="0" r="98" stroke="#f7f4ee" stroke-width="9" opacity="0.92"/>
+    <circle cx="52" cy="0" r="98" stroke="#f7f4ee" stroke-width="9" opacity="0.45"/>
+    <circle cx="0" cy="0" r="14" fill="#c5d4e0" opacity="0.95"/>
+    <circle cx="0" cy="0" r="36" stroke="#c5d4e0" stroke-width="4" opacity="0.3"/>
+  </g>
+</svg>

@@ -10,33 +10,154 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ComoFuncionaRouteImport } from './routes/como-funciona'
+import { Route as DialogoRouteImport } from './routes/dialogo'
+import { Route as ParticiparRouteImport } from './routes/participar'
+import { Route as PasosRouteImport } from './routes/pasos'
+import { Route as PreguntasFrecuentesRouteImport } from './routes/preguntas-frecuentes'
+import { Route as PrincipiosRouteImport } from './routes/principios'
+import { Route as QueEsRouteImport } from './routes/que-es'
+import { Route as ReunionesRouteImport } from './routes/reuniones'
+import { Route as TradicionesRouteImport } from './routes/tradiciones'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ComoFuncionaRoute = ComoFuncionaRouteImport.update({
+  id: '/como-funciona',
+  path: '/como-funciona',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DialogoRoute = DialogoRouteImport.update({
+  id: '/dialogo',
+  path: '/dialogo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParticiparRoute = ParticiparRouteImport.update({
+  id: '/participar',
+  path: '/participar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PasosRoute = PasosRouteImport.update({
+  id: '/pasos',
+  path: '/pasos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PreguntasFrecuentesRoute = PreguntasFrecuentesRouteImport.update({
+  id: '/preguntas-frecuentes',
+  path: '/preguntas-frecuentes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrincipiosRoute = PrincipiosRouteImport.update({
+  id: '/principios',
+  path: '/principios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QueEsRoute = QueEsRouteImport.update({
+  id: '/que-es',
+  path: '/que-es',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReunionesRoute = ReunionesRouteImport.update({
+  id: '/reuniones',
+  path: '/reuniones',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TradicionesRoute = TradicionesRouteImport.update({
+  id: '/tradiciones',
+  path: '/tradiciones',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/como-funciona': typeof ComoFuncionaRoute
+  '/dialogo': typeof DialogoRoute
+  '/participar': typeof ParticiparRoute
+  '/pasos': typeof PasosRoute
+  '/preguntas-frecuentes': typeof PreguntasFrecuentesRoute
+  '/principios': typeof PrincipiosRoute
+  '/que-es': typeof QueEsRoute
+  '/reuniones': typeof ReunionesRoute
+  '/tradiciones': typeof TradicionesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/como-funciona': typeof ComoFuncionaRoute
+  '/dialogo': typeof DialogoRoute
+  '/participar': typeof ParticiparRoute
+  '/pasos': typeof PasosRoute
+  '/preguntas-frecuentes': typeof PreguntasFrecuentesRoute
+  '/principios': typeof PrincipiosRoute
+  '/que-es': typeof QueEsRoute
+  '/reuniones': typeof ReunionesRoute
+  '/tradiciones': typeof TradicionesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/como-funciona': typeof ComoFuncionaRoute
+  '/dialogo': typeof DialogoRoute
+  '/participar': typeof ParticiparRoute
+  '/pasos': typeof PasosRoute
+  '/preguntas-frecuentes': typeof PreguntasFrecuentesRoute
+  '/principios': typeof PrincipiosRoute
+  '/que-es': typeof QueEsRoute
+  '/reuniones': typeof ReunionesRoute
+  '/tradiciones': typeof TradicionesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/como-funciona'
+    | '/dialogo'
+    | '/participar'
+    | '/pasos'
+    | '/preguntas-frecuentes'
+    | '/principios'
+    | '/que-es'
+    | '/reuniones'
+    | '/tradiciones'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/como-funciona'
+    | '/dialogo'
+    | '/participar'
+    | '/pasos'
+    | '/preguntas-frecuentes'
+    | '/principios'
+    | '/que-es'
+    | '/reuniones'
+    | '/tradiciones'
+  id:
+    | '__root__'
+    | '/'
+    | '/como-funciona'
+    | '/dialogo'
+    | '/participar'
+    | '/pasos'
+    | '/preguntas-frecuentes'
+    | '/principios'
+    | '/que-es'
+    | '/reuniones'
+    | '/tradiciones'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ComoFuncionaRoute: typeof ComoFuncionaRoute
+  DialogoRoute: typeof DialogoRoute
+  ParticiparRoute: typeof ParticiparRoute
+  PasosRoute: typeof PasosRoute
+  PreguntasFrecuentesRoute: typeof PreguntasFrecuentesRoute
+  PrincipiosRoute: typeof PrincipiosRoute
+  QueEsRoute: typeof QueEsRoute
+  ReunionesRoute: typeof ReunionesRoute
+  TradicionesRoute: typeof TradicionesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +169,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/como-funciona': {
+      id: '/como-funciona'
+      path: '/como-funciona'
+      fullPath: '/como-funciona'
+      preLoaderRoute: typeof ComoFuncionaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dialogo': {
+      id: '/dialogo'
+      path: '/dialogo'
+      fullPath: '/dialogo'
+      preLoaderRoute: typeof DialogoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/participar': {
+      id: '/participar'
+      path: '/participar'
+      fullPath: '/participar'
+      preLoaderRoute: typeof ParticiparRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pasos': {
+      id: '/pasos'
+      path: '/pasos'
+      fullPath: '/pasos'
+      preLoaderRoute: typeof PasosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/preguntas-frecuentes': {
+      id: '/preguntas-frecuentes'
+      path: '/preguntas-frecuentes'
+      fullPath: '/preguntas-frecuentes'
+      preLoaderRoute: typeof PreguntasFrecuentesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/principios': {
+      id: '/principios'
+      path: '/principios'
+      fullPath: '/principios'
+      preLoaderRoute: typeof PrincipiosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/que-es': {
+      id: '/que-es'
+      path: '/que-es'
+      fullPath: '/que-es'
+      preLoaderRoute: typeof QueEsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reuniones': {
+      id: '/reuniones'
+      path: '/reuniones'
+      fullPath: '/reuniones'
+      preLoaderRoute: typeof ReunionesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tradiciones': {
+      id: '/tradiciones'
+      path: '/tradiciones'
+      fullPath: '/tradiciones'
+      preLoaderRoute: typeof TradicionesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ComoFuncionaRoute: ComoFuncionaRoute,
+  DialogoRoute: DialogoRoute,
+  ParticiparRoute: ParticiparRoute,
+  PasosRoute: PasosRoute,
+  PreguntasFrecuentesRoute: PreguntasFrecuentesRoute,
+  PrincipiosRoute: PrincipiosRoute,
+  QueEsRoute: QueEsRoute,
+  ReunionesRoute: ReunionesRoute,
+  TradicionesRoute: TradicionesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
